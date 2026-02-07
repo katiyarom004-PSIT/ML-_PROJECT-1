@@ -1,0 +1,8 @@
+pandas
+numpy
+seaborn
+matplotlib
+scikit-learn
+catboost
+xgboost
+#-e . # it automatically triggers setup.py
