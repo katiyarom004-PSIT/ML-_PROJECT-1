@@ -65,13 +65,60 @@ class ModelTrainer:
                 "AdaBoost Regressor": AdaBoostRegressor()
             }
 
+            params = {
+    "Linear Regression": {},
+
+    "Lasso": {
+        "alpha": [0.001, 0.01, 0.1, 1, 10]
+    },
+
+    "Ridge": {
+        "alpha": [0.001, 0.01, 0.1, 1, 10]
+    },
+
+    "K-Neighbours Regressor": {
+        "n_neighbors": [3, 5, 7, 9, 11],
+        "weights": ["uniform", "distance"]
+    },
+
+    "Decision Tree": {
+        "max_depth": [None, 5, 10, 20],
+        "min_samples_split": [2, 5, 10]
+    },
+
+    "Random Forest Regressor": {
+        "n_estimators": [50, 100, 200],
+        "max_depth": [None, 5, 10],
+        "min_samples_split": [2, 5]
+    },
+
+    "XGBoost Regressor": {
+        "n_estimators": [50, 100, 200],
+        "learning_rate": [0.01, 0.05, 0.1],
+        "max_depth": [3, 5, 7]
+    },
+
+    "CatBoost Regressor": {
+        "iterations": [100, 200],
+        "learning_rate": [0.01, 0.05, 0.1],
+        "depth": [4, 6, 8]
+    },
+
+    "AdaBoost Regressor": {
+        "n_estimators": [50, 100, 200],
+        "learning_rate": [0.01, 0.05, 0.1]
+    }
+}
+
+
             # Model evaluation
             model_report = evaluate_models(
                 X_train=X_train,
                 X_test=X_test,
                 y_train=y_train,
                 y_test=y_test,
-                models=models
+                models=models,
+                param=params
             )
 
             # Get best model score & name
