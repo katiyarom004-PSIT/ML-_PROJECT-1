@@ -39,7 +39,7 @@ def predict_datapoint():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True)
+    app.run(host="0.0.0.0")
 
 # To run - python -m src.components.data_ingestion
 #on chrome run - http://127.0.0.1:5000/predictdata
